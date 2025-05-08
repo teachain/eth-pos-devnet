@@ -6,7 +6,7 @@ services:
     command:
       - testnet
       - generate-genesis
-      - --fork=deneb
+      - --fork=capella
       - --num-validators=64
       - --genesis-time-delay=15
       - --output-ssz=/consensus/genesis.ssz
