@@ -14,7 +14,7 @@ The development net is fully functional and allows for the deployment of smart c
 First, install Docker. Then, run:
 
 ```
-git clone https://github.com/rauljordan/eth-pos-devnet && cd eth-pos-devnet
+git clone https://github.com/teachain/eth-pos-devnet.git && cd eth-pos-devnet
 ./clean.sh
 docker compose up -d
 ```
