@@ -16,29 +16,29 @@ First, install Docker. Then, run:
 ```
 git clone https://github.com/teachain/eth-pos-devnet.git && cd eth-pos-devnet
 ./clean.sh
-docker compose up -d
+bash start.sh
 ```
 
 You will see the following:
 
 ```
-$ docker compose up -d
+$ bash start.sh
 [+] Running 7/7
- ⠿ Network eth-pos-devnet_default                          Created
- ⠿ Container eth-pos-devnet-geth-genesis-1                 Started
- ⠿ Container eth-pos-devnet-create-beacon-chain-genesis-1  Started
- ⠿ Container eth-pos-devnet-geth-account-1                 Started
- ⠿ Container eth-pos-devnet-geth-1                         Started
- ⠿ Container eth-pos-devnet-beacon-chain-1                 Started
- ⠿ Container eth-pos-devnet-validator-1                    Started
+ ⠿ Network eth-pos-devnet_default         Created
+ ⠿ Container geth-remove-db               Exited
+ ⠿ Container create-beacon-chain-genesis  Exited
+ ⠿ Container geth-genesis                 Exited
+ ⠿ Container beacon-chain                 Started
+ ⠿ Container validator                    Started
+ ⠿ Container geth                         Started
 ```
 
 Each time you restart, you can wipe the old data using `./clean.sh`.
 
 Next, you can inspect the logs of the different services launched. 
 
-```
-docker logs eth-pos-devnet-geth-1 -f
+``` 
+docker logs -f geth --tail=200
 ```
 
 and see:
